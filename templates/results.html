@@ -1,74 +1,73 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Autism Detection</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_draw.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='draw.js') }}"></script>
-
-    <style type="text/css">
-        #canvas {
-    border: 5px;
-    border-style: solid;
-    border-color: blue;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-header {
-
-    font-size: 3em;
+<style type="text/css">
+  .container{
+    width: 50%;
+    border-radius: 10px;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: rgba(255,255,255,0.7)
 
 }
-
-#predict {
-
-    font-size: 2em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+body{
+  background-color: black;
+ 
+     background-image: url('../static/test3.jpg');
+         background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
 }
 
-h1 {
-
-    font-size: 3em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+#toast-container{
+  top: 50%;
+  bottom: unset;
+}
+.toast{
+  background-color: rgba(0,0,0,.8);
+}
+.btn i{
+  font-size: 1rem;
+  margin-right: 2px;
+}
+.header {
+  padding: 0.3em;
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 0.8em;
+  margin-bottom: 1em;
 }
 
-body {
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+@media only screen and (min-width: 768px){
+  .container{
+    width: 80%;
+      max-width: 800px;
+  }
 }
+</style>
 
-#predict {
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<div class="header">
+  <h1 style="font-size: 3em;">AUTISM DETECTION</h1>
 
-    border-style: none;
-}
-    </style>
-</head>
+  
+</div>
+<div class="container" id="results" >
 
-<header>
-    Autism Detection
-</header>
+  <h3>RESULTS</h3>
 
-<body>
-    <h1>Results</h1>
-    <div class="results">
-        <h2 style="color:blue;">Probability_vgg(ASD) {{ Pred_vgg }} & Probability_q10(ASD) {{ Pred_q10 }} </h2>
+  
+      <div class="results" id="predict" style="border-color: black; border-width: 3px;border-style: solid; margin: 1em;" >
+        <center><h4 style="color:#0080ff;font-family: 'Montserrat';font-weight: bold; margin-top: 1.5em; font-size: 1.5em;">Probability_vgg(ASD) : {{ Pred_vgg }}  <br>  Probability_q10(ASD) : {{ Pred_q10 }} </h4></center>
         {%if 0.3*Pred_vgg+0.7*Pred_q10 > 0.5 %}
-        <h2 style="color:red;">ASD Detected ! </h2>
+       <center> <h4 style="color:#ff6666; font-family: 'Montserrat';font-weight: bold;">ASD Detected ! </h4></center>
         {%else%}
-         <h2 style="color:red;">ASD NOT Detected ! </h2>
+         <center><h4 style="color:#ff6666; font-family: 'Montserrat';font-weight: bold;">ASD NOT Detected ! </h4></center>
         {%endif%}
     </div>
-</body>
+  
 
-</html>
+</div>
+
