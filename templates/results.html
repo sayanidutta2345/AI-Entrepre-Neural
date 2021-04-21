@@ -60,7 +60,7 @@ body{
 
   
       <div class="results" id="predict" style="border-color: black; border-width: 3px;border-style: solid; margin: 1em;" >
-        <center><h4 style="color:#0080ff;font-family: 'Montserrat';font-weight: bold; margin-top: 1.5em; font-size: 1em;">Probability_vgg(ASD) : {{ Pred_vgg }}  <br>  Probability_q10(ASD) : {{1- Pred_q10 }} </h4></center>
+        <center><h4 style="color:#0080ff;font-family: 'Montserrat';font-weight: bold; margin-top: 1.5em; font-size: 1em;">Probability_vgg(ASD) : {{ Pred_vgg }}  <br><br>  Probability_q10(ASD) : {{1- Pred_q10 }} </h4></center>
         {%if 0.3*Pred_vgg+0.7*(1-Pred_q10) > 0.5 %}
        <center> <h4 style="color:#ff6666; font-family: 'Montserrat';font-weight: bold;">ASD Detected ! </h4></center>
         {%else%}
