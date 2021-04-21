@@ -84,13 +84,14 @@ def predict():
     # print(all_features)
     # print(int_features)
     # qchat10 = loaded_model.predict_proba([int_features])[0][0]
+    vf = predict_vf(filepath)[0]
     qchat10 = predict_q10([int_features])[0][0]
     # print(int_features)
     # int_features.insert(0,all_features[4])
     # print(int_features)
-    vf = predict_vf(filepath)[0]
-    print(vf)
-    print(qchat10)
+    os.remove(filepath)
+#     print(vf)
+#     print(qchat10)
 
     # final_features = [np.array(int_features)]
     # prediction = model.predict(final_features)
