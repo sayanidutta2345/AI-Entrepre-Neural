@@ -1,4 +1,4 @@
-https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_x86_64.whl
+--extra-index-url https://google-coral.github.io/py-repo/ tflite_runtime
 Flask>=0.8
 flask-ngrok == 0.0.25
 flask-wtf 
