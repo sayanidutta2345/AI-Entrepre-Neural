@@ -85,7 +85,7 @@ def predict_vf(imagepath):
     crop = image.copy()                                        # detect only the facial region
     for (x, y, w, h) in faces:                      # crop the detected face
         crop = image[y:y+h, x:x+w]
-        cv2.imshow(crop)
+        cv2.imshow('',crop)
         
     crop = cv2.resize(crop, (224, 224))             # resize image
     image = crop
