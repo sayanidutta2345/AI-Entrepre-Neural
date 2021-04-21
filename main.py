@@ -36,7 +36,7 @@ class MyForm(FlaskForm):
 def home():
     # print('I am alive')
     # return 'I am alive'
-    return render_template('index.html')
+    return render_template('templates/index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
