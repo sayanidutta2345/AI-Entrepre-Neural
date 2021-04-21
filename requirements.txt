@@ -11,7 +11,7 @@ matplotlib
 sklearn
 pandas
 seaborn
-opencv-python
+opencv-python-headless==4.2.0.32
 cv2-tools
 gunicorn==20.1.0
 --extra-index-url https://google-coral.github.io/py-repo/ 
